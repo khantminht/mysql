@@ -1,0 +1,7 @@
+for Myanmar Font    ==> utf8_unicode-ci;
+
+for Database Name   ==> always small-letters, plueral;   
+
+Structure Type      ==> INT     <integer> (only numbers);
+                        VARCHAR <variable character> (text, number, both: few words);
+                        TEXT    (text, numbar, both:  many words);
