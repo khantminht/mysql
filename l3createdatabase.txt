@@ -1,0 +1,21 @@
+==> show database
+    SHOW DATABASES;
+
+==> create database
+    CREATE DATABASE wdf7780;
+
+==> delete database
+    DROP DATABASE wdf7780;
+
+==> choose database
+    USE wdf7780;
+
+Database naming
+Available
+    *CREATE DATABASE book_stop;
+    *CREATE DATABASE SchoolApp;
+    *CREATE DATABASE bookingsystem;
+
+Unavailable
+    CREATE DATABASE My app;     (spaces)
+    CREATE DATABASE My$#app;    (specical characters)
