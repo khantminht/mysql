@@ -8,7 +8,7 @@
     DROP DATABASE wdf7780;
 
 ==> choose database
-    USE wdf7780;
+    USE DATABASE wdf7780;
 
 Database naming
 Available
