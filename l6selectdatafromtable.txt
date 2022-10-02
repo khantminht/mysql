@@ -1,0 +1,10 @@
+==> Select Data From Table
+
+(i) Method1 *Syntax
+    SELECT * FROM tablename;
+
+(ii) Method2 *Syntax
+    SELECT column1, column2, column3,... FROM tablename;
+
+    SELECT firstname, city FROM persons;
+    SELECT city, firstname, lastname FROM persons;

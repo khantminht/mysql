@@ -52,6 +52,8 @@ ________________________________________________________________________________
 
 *Exercises
 
+==> TRUNCATE
+
 CREATE TABLE abc(
     name VARCHAR(10)
 );
@@ -59,3 +61,79 @@ CREATE TABLE abc(
 CREATE TABLE IF NOT EXISTS abc(
     name VARCHAR(10)
 );
+
+CREATE TABLE IF NOT EXISTS monitors(
+    brand VARCHAR(100),
+    price INT
+);
+
+DESC monitors;
+DESCRIBE monitors;
+
+SELECT * FROM monitors;
+
+DROP TABLE IF EXISTS monitors;
+DROP TABLE IF EXISTS wdf7780.monitors;
+
+==> DELETE FROM monitors;
+    DELETE FROM wdf7780.monitors;
+
+==> TRUNCATE TABLE monitors;            (empty table in phpmyadmin);
+    TRUNCATE TABLE wdf7780.monitors;
+______________________________________________________________________________________________________
+
+==> Rename table
+    *Syntax
+    ALTER TABLE old-tablename
+    RENAME TO new-tablename;
+
+CREATE TABLE IF NOT EXISTS stocks(
+    item VARCHAR(100),
+    stock INT
+);
+
+SHOW TABLES;
+
+DESC stocks;
+
+INSERT INTO stocks(item,stock)
+VALUES  ('desktop',20),
+        ('laptop' ,10),
+        ('projector',5);
+
+SELECT * FROM stocks;
+
+ALTER TABLE stocks
+RENAME TO itaccessories;
+
+SELECT * FROM itaccessories;
+______________________________________________________________________________________________________
+
+==> Add new column to table
+
+*Syntax (Single)
+(i) Method1
+    ADD COLUMN columnname datatype;
+
+(ii)Method2
+    ADD COLUMN columnname datatype FIRST|AFTER existingcolumnname;
+
+*Syntax (MULTI)
+(i) Method1
+    ALTER TABLE tablename
+    ADD COLUMN columnname1 datatype;
+    ADD COLUMN columnname2 datatype;
+
+(ii)Method2
+    ALTER TABLE tablename
+    ADD COLUMN columnname datatype FIRST|AFTER existingcolumnname,
+    ADD COLUMN columnname datatype FIRST|AFTER existingcolumnname;
+
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+ADD COLUMN brand VARCHAR(50);
+
+DESC itaccessories;
+
+SELECT * FROM itaccessories;

@@ -1,0 +1,68 @@
+==> Insert Single Data
+(i) Method1
+
+    INSERT INTO tablename (column1, column2, column3, ...)
+    VALUE (value1, value2, value3, ...);
+
+(ii) Method2
+
+    INSERT INTO tablename
+    VALUE (value1, value2, value3, ...);
+
+________________________________________________________________________________________________
+
+Exercises
+
+CREATE TABLE persons(
+    personid INT,
+    firstname VARCHAR(20),
+    lastname VARCHAR(20),
+    city VARCHAR(15),
+    address VARCHAR(200)
+);
+
+DESC perons;
+
+INSERT INTO persons (personid, firstname, lastname, city, address)
+VALUE (1, 'khant min', 'htet', 'mandalay', 'Yandanar Street');
+
+INSERT INTO persons (personid, firstname, lastname, city, address)
+VALUE (2, 'khant min', 'htet', 'mandalay', 'Yandanar Street');
+
+INSERT INTO persons VALUES (3, 'htet', 'min khant', 'mandalay', 'Yandanar Street');
+INSERT INTO persons VALUES (4, 'aung', 'kyaw', 'Yandanarsan Street', 'Mandalay');
+INSERT INTO persons VALUES (5, 'htet', 'min khant', 'Yandanarsan Street', 'mandalay');
+INSERT INTO persons VALUES (6, 'maung', 'zaw', 'Null', 'Yandanar Street');
+
+==> INSERT MULTI VALUE
+(i) Method1
+    INSERT INTO tablename (column1, column2, column3, ...)
+    VALUES (value1,value2,value3, ...),
+    VALUES (value1,value2,value3, ...),
+    VALUES (value1,value2,value3, ...)
+    ...;
+
+(ii) Method2
+    INSERT INTO tablename
+    VALUES (value1,value2,value3, ...),
+    VALUES (value1,value2,value3, ...),
+    VALUES (value1,value2,value3, ...)
+    ...
+______________________________________________________________________________________________
+
+Exercises
+
+INSERT INTO persons (personid, firstname, lastname, city, address)
+    VALUES  (7, 'nu', 'nu', 'mandalay', 'no.19,myittar st'),
+            (8, 'mya', 'may', 'mandalay', 'no.19,myittar st'),
+            (9, 'lu lu', 'aung', 'yangon', 'no.19,myittar st');
+
+INSERT INTO persons (personid, firstname, lastname, city, address)
+    VALUE(10, 'yu', 'yu', 'mandalay', 'no.19,myittar st'),
+         (11, 'kyaw', 'kyaw', 'mandalay', 'no.19,myittar st'),
+         (12, 'hnin', 'hnin', 'yangon', 'no.19,myittar st');
+
+INSERT INTO persons
+    VALUES  (11, 'pa', 'pa', 'mawlamyine', 'no.19,myittar st'),
+            (12, 'hla', 'hhla', 'mawlamyine', 'no.19,myittar st'),
+            (13, 'ma', 'ma', 'bago', 'no.19,myittar st');
