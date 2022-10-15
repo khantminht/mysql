@@ -135,5 +135,142 @@ ALTER TABLE itaccessories
 ADD COLUMN brand VARCHAR(50);
 
 DESC itaccessories;
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+ADD COLUMN madeby VARCHAR(50) NOT NULL AFTER item;
+
+ALTER TABLE itaccessories
+ADD COLUMN unitprice DECIMAL(10,2) NOT NULL FIRST;
+
+Exercises (Mulit)
+
+ALTER TABLE itaccessories
+ADD COLUMN status INT AFTER brand,
+ADD COLUMN createdby INT NOT NULL AFTER status;
+
+INSERT INTO itaccessories(unitprice, item, madeby, stock, brand, status, createdby)
+VALUES ('20', 'keyboard', 'china', '30', 'a4tech', '1', '1001' ),
+        ('5', 'mouse', 'taiwan', '50', 'logitech', '1', '1008');
+
+SELECT * FROM itaccessories;       
+______________________________________________________________________________________________________
+
+==> RENAME column in table
+
+*Syntax
+
+ALTER TABLE tablename
+CHANGE COLUMN oldcolumnname newcolumnname datatype;
+
+ALTER TABLE itaccessories
+CHANGE COLUMN stock totalqty INT;
+
+DESC itaccessories;
+SELECT * FROM itaccessories;  
+
+ALTER TABLE itaccessories
+CHANGE COLUMN madeby manufacturedby VARCHAR(30);
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+______________________________________________________________________________________________________
+
+==> MODIFY column in table (Use for change column datatype)
+
+*Syntax Single
+ALTER TALBE tablename
+MODIFY column newdatatype;
+
+*Syntax Multi
+ALTER TABLE tablename
+MODIFY columnname newdatatype,
+MODIFY columnname newdatatype;
+
+Exercises
+
+DESC itaccessories;
+
+ALTER TABLE itaccessories
+MODIFY manufacturedby VARCHAR(30);
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+MODIFY manufacturedby VARCHAR(50) NOT NULL;
+
+DESC itaccessories;
+
+ALTER TABLE itaccessories
+MODIFY item VARCHAR(100) NOT NULL;
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+MODIFY item VARCHAR(50) NULL;
+MODIFY brand VARCHAR(30) NOT NULL;
+
+*ERROR = cuz of NULL alrady in data table
+ALTER TABLE itaccessories
+MODIFY status INT NOT NULL;
+
+DESC itaccessories
+
+==> Move column
+ALTER TABLE itaccessories
+MODIFY unitprice DECIMAL(12,2) NOT NULL
+AFTER brand;
+______________________________________________________________________________________________________
+
+==> Drop Column in table
+
+*Syntax Single
+ALTER TABLE tablename
+DROP COLUMN columnname
+
+*Syntax Multi
+ALTER TABLE tablename
+DROP COLUMN columnname,
+DROP COLUMN columnname;
+
+Exercises
+
+ALTER TABLE itaccessories
+DROP COLUMN status;
+
+ALTER TABLE itaccessories
+DROP COLUMN manufacturedby,
+DROP COLUMN createdby;
 
 SELECT * FROM itaccessories;
+
+==> Add primary keyboard
+
+*Method1
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+DROP COLUMN id;
+
+DESC itaccessories;
+SHOW INDEX FROM itaccessories;
+
+*Method2
+
+ALTER TABLE itaccessories
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST,
+ADD PRIMARY KEY(id);
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+SHOW INDEX FROM itaccessories;
