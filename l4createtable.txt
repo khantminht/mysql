@@ -274,3 +274,24 @@ ADD PRIMARY KEY(id);
 DESC itaccessories;
 SELECT * FROM itaccessories;
 SHOW INDEX FROM itaccessories;
+
+==> Drop Primary keyboard
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+SHOW INDEX FROM itaccessories;
+
+*ERROR >> we need to remove AUTO_INCREMENT (by modify)
+ALTER TABLE itaccessories;
+DROP PRIMARY KEY(id);
+
+ALTER TABLE itaccessories
+MODIFY id INT NOT NULL;
+
+ALTER TABLE itaccessories
+DROP PRIMARY KEY;
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+SHOW INDEX FROM itaccessories;
+______________________________________________________________________________________________________
