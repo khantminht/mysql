@@ -1,0 +1,23 @@
+==> Primary keyboard
+
+*Method1
+
+CREATE TABLE IF NOT EXISTS persons(
+    id INT NOT NULL PRIMARY KEY,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255),
+    age INT
+);
+
+
+*Method2
+
+CREATE TABLE IF NOT EXISTS persons(
+    id INT NOT NULL,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255),
+    age INT,
+    ADD PRIMARY KEY(id)         |   PRIMARY KEY(id)
+);
+
+16PR
