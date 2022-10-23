@@ -246,7 +246,7 @@ DROP COLUMN createdby;
 
 SELECT * FROM itaccessories;
 
-==> Add primary keyboard
+==> Add primary key
 
 *Method1
 

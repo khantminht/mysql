@@ -138,5 +138,54 @@ INSERT INTO members VALUES(3,'yu','ya',20,'employee');
 INSERT INTO members VALUES('bu','hta',20);
 
 SELECT * FROM members;
+-------------------------------------------------------------------
 
-22PI
+==> Add primary key
+
+*Method1
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+
+ALTER TABLE itaccessories
+DROP COLUMN id;
+
+DESC itaccessories;
+SHOW INDEX FROM itaccessories;
+
+*Method2
+
+ALTER TABLE itaccessories
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST,
+ADD PRIMARY KEY(id);
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+SHOW INDEX FROM itaccessories;
+
+==> Drop Primary keyboard
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+SHOW INDEX FROM itaccessories;
+
+*ERROR >> we need to remove AUTO_INCREMENT (by modify)
+ALTER TABLE itaccessories;
+DROP PRIMARY KEY(id);
+
+ALTER TABLE itaccessories
+MODIFY id INT NOT NULL;
+
+ALTER TABLE itaccessories
+DROP PRIMARY KEY;
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+SHOW INDEX FROM itaccessories;
+______________________________________________________________________________________________________
