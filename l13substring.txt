@@ -1,0 +1,17 @@
+==> Substring
+
+*Syntax = SUBSTRING();
+SELECT SUBSTRING('text', start, end);
+
+Syntax = SUBSTR();
+SELECT SUBSTR('text', start, end);
+
+SELECT SUBSTRING('Hello World', 0,4);
+
+SELECT SUBSTRING('Hello World', 1,4);
+SELECT SUBSTRING('Hello World', 2,4);
+
+SELECT SUBSTRING('Hello World', 7);
+SELECT SUBSTRING('Mysql Online Class', 7);
+
+29SR

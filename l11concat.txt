@@ -1,0 +1,20 @@
+==> CONCAT
+
+SELECT CONCAT(columnname1, columnname2, ...) FROM tablename;
+
+*Exercise
+
+SELECT CONCAT ('Hello', 'world');
+SELECT CONCAT ('Hello', ' ', 'world');
+SELECT CONCAT ('Hello', '...', 'world');
+SELECT CONCAT ('Hello', '...', 'world ','We are Welcome');
+
+
+SELECT CONCAT ('Hello', 12345);
+SELECT CONCAT ('Hello', '12345');
+SELECT CONCAT (10, 20);
+
+SELECT * FROM members;
+
+SELECT CONCAT (firstname, lastname) FROM members;
+SELECT CONCAT (firstname,' ', lastname) FROM members;

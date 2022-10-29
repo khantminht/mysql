@@ -1,0 +1,41 @@
+==> Aliases
+
+*Syntax
+SELECT columnname AS Aliasename FROM tablename;
+
+SELECT * FROM members;
+
+SELECT id FROM members;
+SELECT id, firstname FROM members;
+
+SELECT id, firstname AS fstname FROM members;
+SELECT id, firstname AS fstname, lastname AS lstname FROM members;
+
+SELECT id,
+firstname AS fstname,
+lastname AS lstname
+FROM members;
+
+SELECT CONCAT (firstname,lastname) FROM members;
+SELECT CONCAT (firstname,' ', lastname) FROM members;
+
+SELECT CONCAT (firstname,' ', lastname) AS fullname FROM members;
+SELECT CONCAT (firstname,' ', lastname) AS fullname, age FROM members;
+
+SELECT firstname AS first, lastname AS last,
+CONCAT (firstname, ' ', lastname) AS fullname, age FROM members;
+
+SELECT firstname AS first, lastname AS last,
+CONCAT (firstname, '_', lastname) AS fullname, age FROM members;
+_________________________________________________________________
+
+==> CONCAT_WS (Concat with Separator)
+
+Syntax
+SELECT CONCAT_WS('_',columnname1,columnname2) FROM tablename;
+
+SELECT CONCAT (firstname,'_',lastname) FROM members;
+SELECT CONCAT_WS('_', firstname, lastname) FROM members;
+
+SELECT CONCAT (firstname,'_',lastname,-',age) FROM members;
+SELECT CONCAT_WS('_', firstname, lastname, age) FROM members;
