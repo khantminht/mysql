@@ -14,4 +14,38 @@ SELECT SUBSTRING('Hello World', 2,4);
 SELECT SUBSTRING('Hello World', 7);
 SELECT SUBSTRING('Mysql Online Class', 7);
 
-29SR
+SELECT SUBSTRING('Hello, I am Mr.Anton',1, 10);
+
+*error
+SELECT SUBSTRING('Hello, I'm Mr.Anton',1 ,10);
+
+*solution
+SELECT SUBSTRING("Hello, I'm Mr.Anton', 1, 10);
+
+*solution
+SELECT SUBSTRING('Hello, I\'m Mr.Anton',1 , 10);
+
+SELECT SUBSTRING('Hello World', -7);
+SELECT SUBSTRING('Mysql Online Class', -7);
+
+SELECT SUBSTRING(address, 1, 10) FROM persons;
+SELECT SUBSTRING(address, 1, 5) AS street FROM persons;
+SELECT SUBSTRING(address, 1, 5) AS 'short address' FROM persons;
+______________________________________________________________
+
+==> SUBSTR()
+
+SELECT SUBSTR(address, 1, 10) FROM persons;
+SELECT SUBSTR(address, 1, 5) AS street FROM persons;
+SELECT SUBSTR(address, 1, 5) AS 'short address' FROM persons;
+______________________________________________________________
+
+==> SUBSTRING() with CONCAT();
+
+>Syntax
+SELECT CONCAT(SUBSTRING(columnname, start, end), '...') FROM tablename;
+
+SELECT CONCAT(SUBSTRING(address, 1, 7), '...') AS street FROM persons;
+SELECT CONCAT(SUBSTR(address, 1, 7), '...') AS street FROM persons;
+______________________________________________________________
+
