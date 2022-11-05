@@ -22,3 +22,18 @@ ______________________________________________________________
 SELECT * FROM persons;
 SELECT REPLACE(city,'m','M') FROM persons;
 SELECT REPLACE(city,'m','M') AS capital FROM persons;
+SELECT REPLACE(city,'a','A') AS capital FROM persons;
+
+SELECT SUBSTRING(address,1,10) FROM persons;
+SELECT SUBSTRING(REPLACE(address,'n','N'),1,10) FROM persons;
+SELECT CONCAT(SUBSTRING(REPLACE(address,'n','N'),1,5), '...') FROM persons;
+
+SELECT CONCAT(SUBSTRING(REPLACE(address,'n','N'),1,5), '...') AS street FROM persons;
+
+SELECT CONCAT(
+    SUBSTRING(
+        REPLACE(
+            address,'n','N'
+        ),1,5
+    ),'...'
+) AS street From persons;
