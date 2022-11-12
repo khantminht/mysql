@@ -1,0 +1,102 @@
+==> AND Syntax
+
+    SELECT * FROM tablename
+    WHERE conditon1 AND conditon2 AND conditon3 AND ... ;
+
+CREATE TABLE IF NOT EXISTS customers(
+    id INT NOT NULL,
+    firstname VARCHAR(20) NOT NULL,
+    lastname VARCHAR(20) NOT NULL,
+    age INT,
+    gender VARCHAR(8) NOT NULL DEFAULT 'male',
+    amount INT(12) DEFAULT '0',
+    city VARCHAR(30) NOT NULL,
+    country VARCHAR(30) NOT NULL
+);
+
+ALTER TABLE customers ADD PRIMARY KEY (id);
+
+ALTER TABLE customers
+MODIFY id INT NOT NULL AUTO_INCREMENT;
+
+DESC customers;
+SHOW INDEX FROM customers;
+SELECT * FROM customers;
+
+INSERT INTO customers(firstname,lastname,age,gender,amount,city,country)
+VALUES ('aung','aung',20,'male',200000,'mandalay','myanmar'),
+    ('aung','kyaw',30,'male',150000,'yangon','myanmar'),
+    ('min','min',18,'male',150000,'bago','myanmar'),
+    ('thura','kyaw',32,'male',95000,'mawlamyine','myanmar'),
+    ('thuta','zaw',16,'male',17000,'yangon','myanmar'),
+    ('zayar','aung',50,'male',300000,'mandalay','myanmar'),
+    ('zue','zue',50,'male',300000,'bankok','thailand'),
+    ('tun','tun',30,'male',150000,'chinmaing','thailand'),
+    ('zaw','zaw',25,'male',800000,'yanaung','thailand'),
+    ('linn','linn',17,'male',500000,'bankok','thailand');
+
+INSERT INTO customers(firstname,lastname,age,gender,amount,city,country)
+VALUES ('su','su',20,'female',100000,'mandalay','myanmar'),
+    ('yu','yu',30,'female',250000,'yangon','myanmar'),
+    ('nu','nu',18,'female',30000,'bago','myanmar'),
+    ('phu','phu',32,'female',40000,'mawlamyine','myanmar'),
+    ('hnin','hnin',16,'female',27000,'yangon','myanmar'),
+    ('yone','yone',50,'female',600000,'mandalay','myanmar'),
+    ('hla','hla',50,'female',600000,'bankok','thailand'),
+    ('mya','mya',30,'female',250000,'chinmaing','thailand'),
+    ('aye','aye',25,'female',600000,'yanaung','thailand'),
+    ('pwint','pwint',17,'female',300000,'bankok','thailand');
+
+SELECT * FROM customers;
+
+SELECT firstname,lastname,city FROM customers;
+
+SELECT * FROM customers
+WHERE country='myanmar';
+
+SELECT * FROM customers
+WHERE gender='male';
+
+SELECT * FROM customers
+WHERE gender='MALE';
+
+SELECT * FROM customers
+WHERE gender='Male';
+
+SELECT * FROM customers
+WHERE gender='female' AND country='thailand';
+
+SELECT * FROM customers
+WHERE gender='female' AND country='thailand' AND city='bankok';
+
+__________________________________________________________________
+
+==> OR Syntax
+
+    SELECT * FROM tablename
+    WHERE conditon1 OR conditon2 OR conditon3,...
+
+SELECT * FROM customers
+WHERE city='yangon';
+
+SELECT * FROM customers
+WHERE city='yangon' OR city='bago';
+
+SELECT * FROM customers
+WHERE city='yangon' OR city='bankok';
+
+XXX // give results but the Syntaxs are wrong!!!
+
+    SELECT * FROM customers
+    WHERE city='yangon' OR country='bankok';
+
+    SELECT * FROM customers
+    WHERE city='yangon' OR gender='female';
+
+// same column >> use OR        conditon1 OR conditon2
+// diff column >> use AND       conditon1 AND conditon2
+__________________________________________________________________
+
+
+
+
