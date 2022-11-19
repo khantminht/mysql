@@ -98,5 +98,38 @@ XXX // give results but the Syntaxs are wrong!!!
 __________________________________________________________________
 
 
+=> Not Syntax
+
+SELECT * FROM tablename
+WHERE NOT conditon1;
+
+SELECT * FROM customers
+WHERE NOT country='myanmar';
+
+SELECT * FROM customers
+WHERE NOT city='yangon';
+__________________________________________________________________
+
+==> AND, OR and NOT
+
+SELECT * FROM customers;
+
+SELECT * FROM customers
+WHERE country = 'myanmar' AND NOT city='mandalay';
+
+SELECT * FROM customers
+WHERE country='myanmar' AND NOT city='mandalay';
+
+SELECT * FROM customers
+WHERE country='myanmar' AND NOT city='yangon' AND NOT city='mandalay';
+
+SELECT * FROM customers
+WHERE country='myanmar' AND city='bago' OR city='mandalay';
+
+SELECT * FROM customers
+WHERE country='myanmar' AND ( city='bago' OR city='mandalay');
+__________________________________________________________________
+
+
 
 

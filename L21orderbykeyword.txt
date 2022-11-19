@@ -1,0 +1,20 @@
+==> ORDER BY Keyword (Sorting our results)
+
+*Syntax
+
+SELECT column1,column2,column3...
+ORDER BY columnname ASC || DESC
+__________________________________________________________________
+
+SELECT * FROM customers;
+
+SELECT * FROM customers ORDER BY firstname ASC;
+SELECT * FROM customers ORDER BY firstname;
+
+SELECT * FROM customers ORDER BY firstname DESC;
+
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE amount > 200000
+ORDER BY amount DESC;
+
+19OB
