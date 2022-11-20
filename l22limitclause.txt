@@ -1,0 +1,17 @@
+==> LIMIT clause
+*Syntax
+
+SELECT column1, column2, column3... FROM tablename
+WHERE conditon
+LIMIT number;
+__________________________________________________________________
+
+SELECT * FROM customers 
+LIMIT 20;
+
+SELECT id,firstname,lastname,age,city FROM customers
+WHERE age > 25
+LIMIT 5;
+
+SELECT id,firstname,lastname,age,city FROM customers
+WHERE age > 25

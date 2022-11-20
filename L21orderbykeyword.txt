@@ -17,4 +17,11 @@ SELECT id,firstname,lastname,age,amount,city FROM customers
 WHERE amount > 200000
 ORDER BY amount DESC;
 
-19OB
+SELECT * FROM customers ORDER BY firstname;
+SELECT * FROM customers ORDER BY firstname, age;
+
+SELECT id,firstname,lastname,age,amount,city FROM customers ORDER BY 2;
+SELECT id,firstname,lastname,age,amount,city FROM customers ORDER BY 3;
+SELECT id,firstname,lastname,age,amount,city FROM customers ORDER BY 6 DESC;
+
+
