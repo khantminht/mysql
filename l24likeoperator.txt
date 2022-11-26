@@ -8,6 +8,13 @@ WHERE column LIKE pattern;
 
 LIKE operator (7 patterns)
 
+WHERE column LIKE 'a%'      Find any values that start with 'a'
+WHERE column LIKE '%a'      Find any values that end with 'a'
+WHERE column LIKE '%or%'    Find any values that have 'or' in any position
+WHERE column LIKE '_r%'     Find any values that have with 'r' in second position
+WHERE column LIKE 'a_%'     Find any values that start 'a' and atleast 2 char in length
+WHERE column LIKE 'a__%     Find any values that start 'a' and atleast 3 char in length
+WHERE column LIKE 'a%o'      Find any values that start with 'a' and end with 'o'
 
 SELECT firstname, lastname, age, city FROM customers;
 
