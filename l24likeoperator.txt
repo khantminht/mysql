@@ -1,0 +1,54 @@
+==> Like operator
+
+*Syntax
+
+SELECT column1, column2, ...
+FROM tablename
+WHERE column LIKE pattern;
+
+LIKE operator (7 patterns)
+
+
+SELECT firstname, lastname, age, city FROM customers;
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'aung';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'm';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'm%';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE '%g';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE '%n';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE '%un';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE '%zaw%';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE '_a%';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'a_%';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'a%g';
+__________________________________________________________________
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'a__%';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'a___%';
+
+SELECT firstname, lastname, age, city FROM customers
+WHERE firstname LIKE 'a____%';
+__________________________________________________________________
+
+26PT
