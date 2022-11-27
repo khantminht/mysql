@@ -58,4 +58,33 @@ SELECT firstname, lastname, age, city FROM customers
 WHERE firstname LIKE 'a____%';
 __________________________________________________________________
 
-26PT
+*Exercise ( LIKE '____')
+
+SELECT * FROM customers;
+
+SELECT * FROM customers
+WHERE amount LIKE '____';
+
+SELECT * FROM customers
+WHERE amount LIKE '_____';
+
+SELECT * FROM customers
+WHERE amount LIKE '______';
+__________________________________________________________________
+
+* Exercise (LIKE '%') is anything
+
+SELECT * FROM customers
+WHERE amount LIKE '%';
+
+*result = _facebook
+SELECT * FROM customers
+WHERE firstname LIKE '\_%';
+
+*result = face_book
+SELECT * FROM customers
+WHERE firstname LIKE '%\_%';
+
+*result = 10%happy
+SELECT * FROM customers
+WHERE firstname LIKE '%\%%';
